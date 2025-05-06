@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Breakfast Club - Passion Portal</title>
+  <link rel="stylesheet" href="content.css">
+  <link rel="stylesheet" href="nav.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="left-group">
+        <img src="logo.png" class="logo"style="height: 50px; width: 50px; border-radius: 100%;">
+        <span class="site-name">Passion Portal</span>
+      </div>
+      <ul class="left-menu" id="nav-links">
+        <li><a href="test.html">Home</a></li>
+        <li><a href="book.html">Books</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="GET TO KNOW ME.html">Author</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container page-content">
+    <div class="content">
+      <hr>
+      <div class="low">
+        <img src="dont.jpg" alt="The Breakfast Club Poster" style="height: 350px; width:230px; margin-top: 90px; border-radius: 10px;display: block; margin: auto;">
+        <div class="info">
+          <h1 class="title" id="typewriter-title">The Breakfast Club</h1>
+          <p class="desc">Director: John Hughes</p>
+          <p class="desc">"The Breakfast Club" is a beloved teen drama that follows five high school students from different social groups as they spend a Saturday in detention. Through their conversations and conflicts, they discover they have more in common than they ever expected.</p>
+          <p class="desc" style="font-weight: bold;">“We're all pretty bizarre. Some of us are just better at hiding it, that's all.”</p>
+          <p class="desc">Released: 1985</p>
+          <button onclick="window.open('https://www.netflix.com/title/60022426', '_blank')">Watch on Netflix</button>
+        </div>
+        <div class="share-container">
+          <button onclick="toggleShareOptions()">Share</button>
+          <div id="share-options" class="share-options">
+            <a href="#" onclick="shareToFacebook()">Facebook</a>
+            <a href="#" onclick="shareToMessenger()">Messenger</a>
+          </div>
+        </div>
+      
+      </div>
+
+      <!-- Video Slider Section -->
+      <div class="video-section">
+        <h2>Watch and See More</h2>
+
+        <div class="slider-container">
+          <div class="slide active">
+            <video width="500" height="300" controls>
+              <source src="The Breakfast Club Dance Scene.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="slide">
+            <img src="Breakfast club.jpg" alt="The Breakfast Club Scene" style="width: 500px; height: 300px; object-fit: cover;">
+          </div>
+          <div class="slide">
+            <img src="club.jpg" alt="The Breakfast Club Scene" style="width: 500px; height: 300px; object-fit: cover;">
+          </div>
+        </div>
+
+        <div class="slider-buttons">
+          <button onclick="prevSlide()">Previous</button>
+          <button onclick="nextSlide()">Next</button>
+        </div>
+      </div>
+
+      <!-- About the Director Section -->
+      <h2 style="margin-top: 50px;">About the Director</h2>
+      <img src="data:image/jpeg;base64,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" alt="John Hughes" style="height:50px; width:50px; border-radius: 50%; margin-top:8px; display: block;margin: auto;">
+      <div class="desc">
+        <p style="margin-bottom: 100px;">John Hughes was an iconic American filmmaker known for defining teen cinema in the 1980s. Through films like "The Breakfast Club," "Ferris Bueller’s Day Off," and "Sixteen Candles," Hughes gave voice to adolescent struggles with humor, insight, and heart.</p>
+      </div>
+    </div>
+
+    <!-- Viewer Reactions Section -->
+    <div class="reader-reactions">
+      <h2>Viewer Thoughts</h2>
+      <p class="desc">What did you think about *The Breakfast Club*? Leave a comment below!</p>
+      <div class="comment-box">
+        <textarea id="comment-input" placeholder="No spoilers, please!"></textarea>
+        <button onclick="addComment()">Submit</button>
+      </div>
+      <div id="comment-list" class="comment-list"></div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Comment Functionality
+    function addComment() {
+      let commentInput = document.getElementById("comment-input");
+      let commentText = commentInput.value.trim();
+      if (commentText === "") {
+        alert("Please enter a comment before submitting.");
+        return;
+      }
+      let commentItem = document.createElement("div");
+      commentItem.classList.add("comment-item");
+      commentItem.innerHTML = `<p>${commentText}</p>`;
+      document.getElementById("comment-list").appendChild(commentItem);
+      commentInput.value = "";
+    }
+
+    // Slider Functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("show");
+    }
+    function toggleShareOptions() {
+    const menu = document.getElementById("share-options");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+  
+  function shareToFacebook() {
+    const shareUrl = encodeURIComponent(window.location.href);
+    const fbShare = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+    window.open(fbShare, '_blank', 'width=600,height=400');
+  }
+  
+  function shareToMessenger() {
+    const shareUrl = encodeURIComponent(window.location.href);
+    const messengerShare = `https://www.facebook.com/dialog/send?link=${shareUrl}&app_id=1234567890&redirect_uri=${shareUrl}`;
+    window.open(messengerShare, '_blank', 'width=600,height=400');
+  }
+  </script>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="center">   
+      <a href="https://open.spotify.com/user/lb42bd0vp15fgk3qc6uki767n" target="_blank"><img src="spotify.png"></a>
+      <a href="https://www.instagram.com/niexxll/" target="_blank"><img src="ig.png"></a>
+      <a href="https://www.facebook.com/piexckk" target="_blank"><img src="fb.png"></a>
+      <a href="https://www.tiktok.com/@orphixk" target="_blank"><img src="tiktok.png"></a>
+      <a href="https://pin.it/7EdxdsZLc" target="_blank"><img src="pint.png"></a>
+    </div>
+  </footer>
+</body>
+</html>

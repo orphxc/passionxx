@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>A Little Life</title>
+    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="nav.css">
+   
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+          <div class="hamburger" onclick="toggleMenu()">☰</div>
+          <div class="left-group">
+            <img src="logo.png" class="logo" style="height: 50px; width: 50px; border-radius: 100%;">
+            <span class="site-name">Passion Portal</span>
+          </div>
+          <ul class="left-menu" id="nav-links">
+            <li><a href="test.html">Home</a></li>
+            <li><a href="book.html">Books</a></li>
+            <li><a href="films.html">Films</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="GET TO KNOW ME.html">Author</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="content">
+            <div class="low">   
+                <img src="littlelife.jpg" alt="A Little Life"  style="height: 350px; width:230px; margin-top: 90px; border-radius: 10px;display: block; margin: auto;">
+                <div class="info">
+                    <h1 class="title" id="typewriter-title">A Little Life</h1>
+                    <p class="author">Hanya Yanagihara</p>
+                    <p class="desc"> "A Little Life follows four friends, Willem, Jude, JB, and Malcolm, through their lives in New York City as they navigate relationships, career challenges, and the lasting trauma that each of them carries. At the heart of the story is Jude, whose dark and painful past is revealed slowly and whose journey for healing becomes the core of the novel."</p>
+                    <p class="desc" style="font-size: 20px; font-weight: bold;">Sometimes, the most difficult things to say are the ones that matter most.</p>
+                    <p class="desc" style="font-size: 18px;">Published in 2015</p>
+                    <button onclick="window.location.href='https://www.amazon.com/Little-Life-Novel-Hanya-Yanagihara/dp/0804172706'">Buy and Read Now!!</button>
+                </div>
+                <div class="share-container">
+                    <button onclick="toggleShareOptions()">Share</button>
+                    <div id="share-options" class="share-options">
+                      <a href="#" onclick="shareToFacebook()">Facebook</a>
+                      <a href="#" onclick="shareToMessenger()">Messenger</a>
+                    </div>
+            </div>
+            </div>
+
+            <h2 style="margin-top: 50px;">About the Author</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBLTDobOX_xBRrvNwAG4DAyCkO4p2COoj14t8RxI5eVA&s&ec=72940544" alt="Hanya Yanagihara" style="height:50px; width:50px; border-radius: 50%; margin-top:8px; display: block;margin: auto;">
+            <div class="desc">
+                <p style="margin-bottom: 100px;">Hanya Yanagihara (born 1974) is an American novelist and editor. She is best known for her novel *A Little Life* (2015), which was shortlisted for the Booker Prize and won the Kirkus Prize for Fiction. Yanagihara is also the editor-in-chief of *T Magazine* and has been recognized for her writing and exploration of trauma, survival, and human endurance in her work.</p>
+            </div>
+        </div>
+
+        <div class="reader-reactions">
+            <h2>Point of Views</h2>
+            <p class="desc">Share your experiences while reading!!</p>
+            <div class="comment-box">
+                <textarea id="comment-input" placeholder="Kindly avoid spoilers so that other readers can fully enjoy the experience."></textarea>
+                <button onclick="addComment()">Submit</button>
+            </div>
+            <div id="comment-list" class="comment-list"></div>
+        </div>
+    </div>
+    </div>
+    <script>
+        function addComment() {
+            let commentInput = document.getElementById("comment-input");
+            let commentText = commentInput.value.trim();
+            
+            if (commentText === "") {
+                alert("Please enter a comment before submitting.");
+                return;
+            }
+
+            let commentItem = document.createElement("div");
+            commentItem.classList.add("comment-item");
+            commentItem.innerHTML = `<p>${commentText}</p>`;
+
+            document.getElementById("comment-list").appendChild(commentItem);
+            commentInput.value = "";
+        }
+
+        const titleText = "A Little Life";
+        let i = 0;
+        const speed = 80; // typing speed
+
+         function typeWriter() {
+         if (i < titleText.length) {
+         document.getElementById("typewriter-title").innerHTML += titleText.charAt(i);
+         i++;
+         setTimeout(typeWriter, speed);
+    }
+  }
+
+  window.addEventListener('load', () => {
+    document.getElementById("typewriter-title").innerHTML = ""; // Clear original
+    typeWriter();
+  });
+
+  function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("show");
+  }
+
+  function toggleShareOptions() {
+    const menu = document.getElementById("share-options");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+  
+  function shareToFacebook() {
+    const shareUrl = encodeURIComponent(window.location.href);
+    const fbShare = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+    window.open(fbShare, '_blank', 'width=600,height=400');
+  }
+  
+  function shareToMessenger() {
+    const shareUrl = encodeURIComponent(window.location.href);
+    const messengerShare = `https://www.facebook.com/dialog/send?link=${shareUrl}&app_id=1234567890&redirect_uri=${shareUrl}`;
+    window.open(messengerShare, '_blank', 'width=600,height=400');
+  }
+    </script>
+     <footer>
+        <div class="center">   
+            <a href="https://open.spotify.com/user/lb42bd0vp15fgk3qc6uki767n" target="_blank">
+                <img src="spotify.png"> 
+            </a>
+            <a href="https://www.instagram.com/niexxll/" target="_blank">
+                <img src="ig.png">
+            </a>
+            <a href="https://www.facebook.com/piexckk" target="_blank">
+                <img src="fb.png"> 
+            </a>
+            <a href="https://www.tiktok.com/@orphixk" target="_blank">
+                <img src="tiktok.png"> 
+            </a>
+            <a href="https://pin.it/7EdxdsZLc" target="_blank">
+                <img src="pint.png">  
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

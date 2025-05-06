@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monster (2023) - Passion Portal</title>
+  <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="nav.css">
+   
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+          <div class="hamburger" onclick="toggleMenu()">☰</div>
+          <div class="left-group">
+            <img src="logo.png" class="logo" style="height: 50px; width: 50px; border-radius: 100%;">
+            <span class="site-name">Passion Portal</span>
+          </div>
+          <ul class="left-menu" id="nav-links">
+            <li><a href="test.html">Home</a></li>
+            <li><a href="book.html">Books</a></li>
+            <li><a href="films.html">Films</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="GET TO KNOW ME.html">Author</a></li>
+          </ul>
+        </div>
+      </nav>
+
+  <div class="container">
+    <div class="content">
+      <hr>
+      <div class="low">
+        <img src="monster.jpg" alt="Monster 2023 Poster"style="height: 350px; width:230px; margin-top: 90px; border-radius: 10px;display: block; margin: auto;">
+        <div class="info">
+          <h1 class="title">Monster (2023)</h1>
+          <p class="desc">Director: Hirokazu Kore-eda</p>
+          <p class="desc">"Monster" (怪物) is a 2023 Japanese drama film that intricately explores the perspectives of a mother, a teacher, and a child. Through masterful storytelling and emotional depth, the film unveils a powerful message about misunderstanding, truth, and empathy.</p>
+          <p class="desc" style="font-weight: bold;">"Who's the real monster?"</p>
+          <p class="desc">Released: 2023</p>
+          <button onclick="window.location.href='https://www.youtube.com/watch?v=YOoMZ0V2Z9A'" target="_blank">Watch Trailer</button>
+        </div>
+        <div class="share-container">
+          <button onclick="toggleShareOptions()">Share</button>
+          <div id="share-options" class="share-options">
+            <a href="#" onclick="shareToFacebook()">Facebook</a>
+            <a href="#" onclick="shareToMessenger()">Messenger</a>
+          </div>
+      </div>
+      </div>
+
+      <!-- Video/Image Slider Section -->
+      <div class="video-section">
+        <h2>Watch and See More</h2>
+
+        <div class="slider-container">
+          <div class="slide active">
+            <video width="500" height="300" controls>
+              <source src="monster.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="slide">
+            <img src="mon.jpg" alt="Scene from Monster" style="width: 500px; height: 300px; object-fit: cover;">
+          </div>
+          <div class="slide">
+            <img src="moV.jpg" alt="Another scene from Monster" style="width: 500px; height: 300px; object-fit: cover;">
+          </div>
+        </div>
+
+        <div class="slider-buttons">
+          <button onclick="prevSlide()">Previous</button>
+          <button onclick="nextSlide()">Next</button>
+        </div>
+      </div>
+
+      <!-- About the Director Section -->
+      <h2 style="margin-top: 50px;">About the Director</h2>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAiwqVnesF0qPsXA5BPlKkqK1X-snNmbsc3yrrrBqADSKiiYe_4A&s=10&ec=72940544" alt="Hirokazu Kore-eda" style="height: 50px; width: 50px; border-radius: 50%; margin-top: 8px; display: block;margin: auto;">
+      <div class="desc">
+        <p style="margin-bottom: 100px;">Hirokazu Kore-eda is an acclaimed Japanese director known for his deeply humanistic films. With works like "Shoplifters" and "Nobody Knows," he continues to move audiences around the world through delicate storytelling and emotional honesty.</p>
+      </div>
+    </div>
+
+    <!-- Viewer Reactions Section -->
+    <div class="reader-reactions">
+      <h2>Viewer Thoughts</h2>
+      <p class="desc">What did you think about *Monster (2023)*? Leave a comment below!</p>
+      <div class="comment-box">
+        <textarea id="comment-input" placeholder="No spoilers, please!"></textarea>
+        <button onclick="addComment()">Submit</button>
+      </div>
+      <div id="comment-list" class="comment-list"></div>
+    </div>
+  </div>
+
+  <script>
+    // Comment Functionality
+    function addComment() {
+      let commentInput = document.getElementById("comment-input");
+      let commentText = commentInput.value.trim();
+      if (commentText === "") {
+        alert("Please enter a comment before submitting.");
+        return;
+      }
+      let commentItem = document.createElement("div");
+      commentItem.classList.add("comment-item");
+      commentItem.innerHTML = `<p>${commentText}</p>`;
+      document.getElementById("comment-list").appendChild(commentItem);
+      commentInput.value = "";
+    }
+
+    // Slider Functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("show");
+  }
+
+  function toggleShareOptions() {
+    const menu = document.getElementById("share-options");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+  
+  function shareToFacebook() {
+    const shareUrl = encodeURIComponent(window.location.href);
+    const fbShare = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+    window.open(fbShare, '_blank', 'width=600,height=400');
+  }
+  
+  function shareToMessenger() {
+    const shareUrl = encodeURIComponent(window.location.href);
+    const messengerShare = `https://www.facebook.com/dialog/send?link=${shareUrl}&app_id=1234567890&redirect_uri=${shareUrl}`;
+    window.open(messengerShare, '_blank', 'width=600,height=400');
+  }
+  </script>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="center">   
+      <a href="https://open.spotify.com/user/lb42bd0vp15fgk3qc6uki767n" target="_blank">
+        <img src="spotify.png"> 
+      </a>
+      <a href="https://www.instagram.com/niexxll/" target="_blank">
+        <img src="ig.png">
+      </a>
+      <a href="https://www.facebook.com/piexckk" target="_blank">
+        <img src="fb.png"> 
+      </a>
+      <a href="https://www.tiktok.com/@orphixk" target="_blank">
+        <img src="tiktok.png"> 
+      </a>
+      <a href="https://pin.it/7EdxdsZLc" target="_blank">
+        <img src="pint.png">  
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minecraft - Passion Portal</title>
+  <link rel="stylesheet" href="content.css">
+  <link rel="stylesheet" href="nav.css">
+ 
+</head>
+
+<body>
+  <nav>
+      <div class="nav-container">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="left-group">
+          <img src="logo.png" class="logo" style="height: 50px; width: 50px; border-radius: 100%;">
+          <span class="site-name">Passion Portal</span>
+        </div>
+        <ul class="left-menu" id="nav-links">
+          <li><a href="test.html">Home</a></li>
+          <li><a href="book.html">Books</a></li>
+          <li><a href="films.html">Films</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="GET TO KNOW ME.html">Author</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  <div class="container">
+    <div class="content">
+      <hr>
+      <div class="low">
+        <img src="mine.jpg" alt="Minecraft Cover" style="height: 350px; width:230px; margin-top: 90px; border-radius: 10px;display: block; margin: auto;">
+        <div class="info">
+          <h1>Minecraft</h1>
+          <p class="desc">Developer: Mojang Studios</p>
+          <p class="desc">Minecraft is a sandbox video game developed by Mojang Studios. It allows players to explore a blocky, procedurally generated 3D world with infinite terrain, discovering and extracting raw materials, crafting tools, and building structures or earthworks. Minecraft has become one of the best-selling video games of all time, with a massive, active community. Players can also engage in combat, explore caves, and interact with mobs in the open world.</p>
+          <p class="desc" style="font-weight: bold;">"Create. Explore. Survive."</p>
+          <p class="desc">First released in 2011</p>
+          <button onclick="window.location.href='https://www.minecraft.net/en-us'">Download Now!</button>
+        </div>
+        <div class="share-container">
+          <button onclick="toggleShareOptions()">Share</button>
+          <div id="share-options" class="share-options">
+            <a href="#" onclick="shareToFacebook()">Facebook</a>
+            <a href="#" onclick="shareToMessenger()">Messenger</a>
+          </div>
+      </div>
+      </div>
+
+   <!-- Replace old video section with slider -->
+   <div class="video-section">
+    <h2>Watch and See More</h2>
+
+    <div class="slider-container">
+      <div class="slide active">
+        <video width="500" height="300" controls>
+          <source src="Minecraft - Made with Clipchamp.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="slide">
+        <img src="m.jpg" alt="Scene from The 100" style="width: 500px; height: 300px; object-fit: cover;">
+      </div>
+      <div class="slide">
+        <img src="i.jpg" alt="Scene from The 100" style="width: 500px; height: 300px; object-fit: cover;">
+      </div>
+    </div>
+
+    <div class="slider-buttons">
+      <button onclick="prevSlide()">Previous</button>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+  </div>
+
+
+      <h2 style="margin-top: 50px;">About the Developer</h2>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjKdlg7SI_OkvIKyiwQm-kCktzCC9J-TJ5_EEYFBNQk_RKtwzfvw&s=10&ec=72940544" alt="Mojang Studios" style="height:50px; width:50px; border-radius: 50%; display: block;margin: auto;">
+      <div class="desc">
+        <p style="margin-bottom: 100px;">Mojang Studios is a Swedish video game developer based in Stockholm, known for creating Minecraft, one of the most popular games in the world. The studio was founded in 2009 and is now a subsidiary of Xbox Game Studios, part of Microsoft.</p>
+      </div>
+    </div>
+
+    <div class="reader-reactions">
+      <h2>Player Feedback</h2>
+      <p class="desc">Share your experience with the game!</p>
+      <div class="comment-box">
+        <textarea id="comment-input" placeholder="No spoilers in gameplay or endings, please."></textarea>
+        <button onclick="addComment()">Submit</button>
+      </div>
+      <div id="comment-list" class="comment-list"></div>
+    </div>
+  </div>
+
+  <script>
+    function addComment() {
+      let commentInput = document.getElementById("comment-input");
+      let commentText = commentInput.value.trim();
+
+      if (commentText === "") {
+        alert("Please enter a comment before submitting.");
+        return;
+      }
+
+      let commentItem = document.createElement("div");
+      commentItem.classList.add("comment-item");
+      commentItem.innerHTML = `<p>${commentText}</p>`;
+
+      document.getElementById("comment-list").appendChild(commentItem);
+      commentInput.value = "";
+    }
+     // New Script for Slider
+     let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("show");
+  }
+
+  function toggleShareOptions() {
+    const menu = document.getElementById("share-options");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+  
+  function shareToFacebook() {
+    const shareUrl = encodeURIComponent(window.location.href);
+    const fbShare = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+    window.open(fbShare, '_blank', 'width=600,height=400');
+  }
+  
+  function shareToMessenger() {
+    const shareUrl = encodeURIComponent(window.location.href);
+    const messengerShare = `https://www.facebook.com/dialog/send?link=${shareUrl}&app_id=1234567890&redirect_uri=${shareUrl}`;
+    window.open(messengerShare, '_blank', 'width=600,height=400');
+  }
+  </script>
+
+<footer>
+  <div class="center">   
+      <a href="https://open.spotify.com/user/lb42bd0vp15fgk3qc6uki767n" target="_blank">
+          <img src="spotify.png"> 
+      </a>
+      <a href="https://www.instagram.com/niexxll/" target="_blank">
+          <img src="ig.png">
+      </a>
+      <a href="https://www.facebook.com/piexckk" target="_blank">
+          <img src="fb.png"> 
+      </a>
+      <a href="https://www.tiktok.com/@orphixk" target="_blank">
+          <img src="tiktok.png"> 
+      </a>
+      <a href="https://pin.it/7EdxdsZLc" target="_blank">
+          <img src="pint.png">  
+      </a>
+  </div>
+</footer>
+</body>
+</html>

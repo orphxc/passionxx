@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passion Portal</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="content.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+          <div class="hamburger" onclick="toggleMenu()">☰</div>
+          <div class="left-group">
+            <img src="logo.png" class="logo" style="height: 50px; width: 50px; border-radius: 100%;">
+            <span class="site-name">Passion Portal</span>
+          </div>
+          <ul class="left-menu" id="nav-links">
+            <li><a href="test.html">Home</a></li>
+            <li><a href="book.html">Books</a></li>
+            <li><a href="films.html">Films</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="GET TO KNOW ME.html">Author</a></li>
+          </ul>
+        </div>
+      </nav>
+
+<h1 style="text-align: center; color: black; margin-top: 90px; font-size: 60px;">Passion Portal</h1>
+
+<article style="margin-top: 60px;">
+    <h2 style="font-size: 30px; text-align: center;">Navigate your Self</h2>
+    <p style="font-size: 20px; text-align: center;">Find what you're passionate about, whether it's books, films, music, games, and more!</p>
+</article>
+
+<hr style="color: black; margin-top: 30px; margin-bottom: 40px;">
+
+<h2 style="text-align: center; font-size: 30px;">
+  <a href="book.html" class="clickable-title">
+     Books
+  </a>
+</h2>
+
+<div class="books">
+    <a href="perks.html">
+        <img src="perks.jpg" class="books1">
+        <p class="textbook">Perks of Being a Wallflower</p>
+    </a>
+
+    <a href="evelyn.html">
+        <img src="ebelyn.jpg" class="books1">
+        <p class="textbook">7 Husbands of Evelyn Hugo</p>
+    </a>
+
+    <a href="agggtm.html">
+        <img src="agg.jpg" class="books1">
+        <p class="textbook">Good Girl's Guide to Murder</p>
+    </a>
+</div>
+
+<h2 style="text-align: center; font-size: 30px;">
+    <a href="films.html" class="clickable-title">
+       Films
+    </a>
+</h2>
+
+<div class="vidplace2">
+    <div class="vidplace">  
+        <a href="last.html"> 
+            <video class="vid" loop muted autoplay> 
+                <source src="TLW.mp4" type="video/mp4">
+            </video> 
+            <img src="tlw3.jpg" class="thumb">
+        </a>
+        <p class="textbook">The Last Twilight</p> 
+    </div>
+
+    <div class="vidplace">
+        <a href="anne.html">
+            <video class="vid" loop muted autoplay> 
+                <source src="anne.mp4" type="video/mp4">
+            </video>
+            <img src="anne.jpg" class="thumb">
+        </a>
+        <p class="textbook">Anne with an E</p>
+    </div> 
+
+    <div class="vidplace">
+        <a href="100.html">
+            <video class="vid" loop muted autoplay> 
+                <source src="100.mp4" type="video/mp4">
+            </video>
+            <img src="100.jpg" class="thumb">
+        </a>
+        <p class="textbook">The 100</p>
+    </div> 
+</div>
+
+<h2 style="text-align: center; font-size: 30px; margin-top: 155px;"> 
+    <a href="games.html" class="clickable-title">
+       Games
+    </a>
+</h2>
+
+
+<div class="games">
+    <a href="valo.html">
+        <img src="valo.jpg" class="games1">
+        <p class="gamebook">Valorant</p>
+    </a>
+
+    <a href="genshin.html">
+        <img src="genshin.jpg" class="books1">
+        <p class="textbook">Genshin Impact</p>
+    </a>
+
+    <a href="fores.html">
+        <img src="forest.jpg" class="books1">
+        <p class="textbook">The Forest</p>
+    </a>
+</div>
+
+<footer>
+    <div class="center">   
+        <a href="https://open.spotify.com/user/lb42bd0vp15fgk3qc6uki767n">
+            <img src="spotify.png"> 
+        </a>
+        <a href="https://www.instagram.com/niexxll/">
+            <img src="ig.png">
+        </a>
+        <a href="https://www.facebook.com/piexckk">
+            <img src="fb.png"> 
+        </a>
+        <a href="https://www.tiktok.com/@orphixk">
+            <img src="tiktok.png"> 
+        </a>
+        <a href="https://pin.it/7EdxdsZLc">
+            <img src="pint.png">  
+        </a>
+    </div>
+</footer>
+
+<script>
+  window.addEventListener('load', function() {
+    // Create welcome div
+    const welcomeMessage = document.createElement('div');
+    welcomeMessage.innerText = "Welcome! Hope you enjoy yourself ^-^";
+    welcomeMessage.style.position = 'fixed';
+    welcomeMessage.style.top = '20px';
+    welcomeMessage.style.left = '50%';
+    welcomeMessage.style.transform = 'translateX(-50%)';
+    welcomeMessage.style.backgroundColor = 'black';
+    welcomeMessage.style.color = 'white';
+    welcomeMessage.style.padding = '15px 30px';
+    welcomeMessage.style.fontSize = '20px';
+    welcomeMessage.style.borderRadius = '10px';
+    welcomeMessage.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+    welcomeMessage.style.zIndex = '9999';
+    welcomeMessage.style.opacity = '0';
+    welcomeMessage.style.transition = 'opacity 1s ease';
+
+    document.body.appendChild(welcomeMessage);
+
+    // Fade in
+    setTimeout(() => {
+      welcomeMessage.style.opacity = '1';
+    }, 100);
+
+    // Fade out and remove after 3 seconds
+    setTimeout(() => {
+      welcomeMessage.style.opacity = '0';
+      setTimeout(() => {
+        document.body.removeChild(welcomeMessage);
+      }, 1000);
+    }, 3000);
+  });
+
+  function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>

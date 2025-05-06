@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.books1 {
+    width: 260px;
+    height: 400px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+.books1:hover {
+    transform: scale(1.05);
+}
+.textbook {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+nav {
+    background: #a3a3a3;
+    padding: 10px 0;
+}
+.site-name {
+    font-size: 24px; 
+    font-weight: bold;
+    color: white; 
+    margin-left: 10px; 
+}
+
+.left-menu li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-menu {
+    display: flex;
+    align-items: center;
+}
+
+.right-menu {
+    margin-left: auto;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #fff;
+    color: black;
+    border-radius: 5px;
+}

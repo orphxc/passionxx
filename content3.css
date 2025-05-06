@@ -1,0 +1,108 @@
+   body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding-top: 80px; /* Prevent content from being hidden under fixed navbar */
+    }
+  
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Main Content Styles */
+    main {
+      padding: 20px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+  
+    .book {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  
+    .book img {
+      width: 260px;
+      height: 400px;
+      border-radius: 5px;
+    }
+    /* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #a3a3a3;
+    position: fixed;  /* Fixes the footer to the bottom */
+    bottom: 0;  /* Sticks it to the bottom of the viewport */
+    left: 0;
+    width: 100%;
+    z-index: 1000;  /* Ensures it stays on top of other content */
+    margin-top: 400px;
+}
+
+footer hr {
+    margin-top: 200px;
+}
+
+footer .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+footer a img {
+    width: 35px;
+    height: 35px;
+}
+
+.bottom{
+  margin-bottom: 100px;
+}
+    /* Responsive Book Layout */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .book img {
+        width: 100%; /* Make images responsive */
+        height: auto;
+        object-fit: cover;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .book h3 {
+        font-size: 16px;
+      }
+
+      .book p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      .book h3 {
+        font-size: 14px;
+      }
+
+      .book p {
+        font-size: 12px;
+      }
+    }
